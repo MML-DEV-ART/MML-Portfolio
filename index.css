@@ -654,5 +654,11 @@ ul{
     object-fit: cover;
   }
 }
+@media screen and (max-width: 500px){
 
+  .father .dashbar ul{
+position: absolute;
+top: 30px;
+left: -10px;
+  }
 
