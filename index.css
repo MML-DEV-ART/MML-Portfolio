@@ -659,6 +659,9 @@ ul{
   .father .dashbar ul{
 position: absolute;
 top: 30px;
-left: -10px;
-  }
+left: -40px;
+  } }
+body{
+  overflow: hidden;
+}
 
