@@ -1,0 +1,652 @@
+:root {
+    --main-bg: rgb(0, 0, 0);
+    --light-beige: #e31313;
+    --main-red: #e69999;
+    --accent: #ffffff;
+    --pure-white: #ffffff;  
+
+    --text-dark: #000000;
+  }
+
+  /* Scroll timeline setup */
+  @scroll-timeline scroll-fade-timeline {
+    source: auto;
+    orientation: block;
+    scroll-offsets: start end;
+  }
+
+  /* Animation keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Apply animation using scroll timeline */
+  .father * {
+    opacity: 0;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timeline: scroll-fade-timeline;
+    animation-timing-function: ease-out;
+  }
+
+  /* Stagger delay for children */
+  .father *:nth-child(1) { animation-delay: 0s; }
+  .father *:nth-child(2) { animation-delay: 0.1s; }
+  .father *:nth-child(3) { animation-delay: 0.2s; }
+  .father *:nth-child(4) { animation-delay: 0.3s; }
+  .father *:nth-child(5) { animation-delay: 0.4s; }
+  .father *:nth-child(6) { animation-delay: 0.5s; }
+  .father *:nth-child(7) { animation-delay: 0.6s; }
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--pure-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+
+
+  h2{
+    display: inline;
+  }
+
+
+  @media (max-width: 750px) {
+    h2 {
+      position: relative;
+      z-index: 10; /* قيمة عالية تجعله فوق */
+    }
+    
+    p {
+      position: relative;
+      z-index: 1; /* أقل من h2 */
+    }
+  }
+
+  /* Links */
+  a {
+    text-decoration: none;
+    color: rgba(234, 183, 117, 0.497);
+    font-size: 1.2rem;
+  }
+
+  /* Father section and fixed dashbar */
+  .father {
+    height: 500px;
+  }
+  #job {
+    scroll-margin-top: 80px; /* اضبط 80px على حسب ارتفاع navbar أو المسافة التي تريدها */
+  }
+  #skills {
+    scroll-margin-top: 80px; /* اضبط 80px على حسب ارتفاع navbar أو المسافة التي تريدها */
+  }
+  .father .dashbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+      background-color: rgb(3, 49, 69);
+
+    width: 100%;
+    height: 18vh;
+    z-index: 1;
+  }
+
+  .father .dashbar h1 {
+    font-size: 2rem;
+    margin-left: 15px;
+    color: rgba(234, 183, 117, 0.902);
+  }
+
+  .father .dashbar ul {
+    list-style: none;
+    display: flex;
+  }
+
+
+  .father .dashbar ul li {
+    padding: 5px 20px;
+    margin-right: 25px;
+    
+  }
+
+  .father .dashbar ul a:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    transition: 0.5s;
+  }
+
+  /* Home section */
+  .home {
+    width: 100%;
+    height: 470px;
+    background: rgba(234, 183, 117, 0.497);
+    align-items: center;
+    background-repeat: no-repeat;
+    color: rgba(76, 44, 2, 0.939);
+  }
+
+  .home h2 {
+    position: relative;
+    top: 135px;
+    padding-left: 40px;
+    text-transform: uppercase;
+    text-decoration: underline solid rgba(76, 44, 2, 0.939);
+    text-underline-offset: 6px;
+    transition: 0.5s;
+  }
+
+  .home p {
+    position: relative;
+    top: 150px;
+    width: 40%;
+    padding-left: 30px;
+    display: flex;
+    line-height: 30px;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+  }
+
+  .home .home-image img {
+    background-color: var(--accent);
+    width: 250px;
+    height: 240px;
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    left: 65%;
+    top: -95px;
+  }
+
+  /* Section 2 */
+  .desiem-pag {
+    width: 100%;
+    height:  270px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    margin-top: 50px;
+  }
+
+  .desiem-pag .desiem-paragraphe h1 {
+    position: relative;
+    top: 20px;
+    left: 65px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+
+  .desiem-pag .desiem-paragraphe p {
+    width: 80%;
+    position: relative;
+    padding: 40px;
+    top: -20px;
+    font-size: 1.3rem;
+    line-height: 37px;
+  }
+
+  .desiem-pag .desiem-image img {
+    width: 350px;
+    height: 450px;
+    background-position: center;
+  }
+
+  /* Responsive 912px */
+  @media screen and (max-width: 912px) {
+    .home p {
+      top: 130px;
+      width: 50%;
+      font-size: 1.2rem;
+      padding-top: 40px;
+    }
+
+    .home .home-image img {
+      left: 60%;
+      top: -120px;
+    }
+.father .dashbar ul{
+ width: 100%;
+ position: absolute;
+ left: 30px;
+}
+    .father .dashbar ul li {
+      padding: 10px 4px;
+        margin-left: -16px;
+      left: 5px;
+    }
+  .father .dashbar ul li a{
+ font-size: 1.1rem;
+
+  }
+  }
+
+  /* Responsive 750px */
+  @media (max-width: 750px) {
+    .hh2 h2 {
+      position: absolute;
+      top: 85px;
+      left: 47%;
+      transform: translateX(-50%);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .father {
+      justify-content: center;
+    }
+
+    .father .dashbar {
+      display: block;
+      height: 80px;
+    }
+
+    .father .dashbar h1 {
+      text-align: center;
+      text-decoration: solid 2px var(--main-red);
+      font-size: 2rem;
+      top: 10px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      left: 30px;
+      top: 30px;
+      margin-left: 30px;
+    }
+
+    .home {
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 550px;
+    }
+
+    .home p {
+      width: 97%;
+      top: 55px;
+      margin-left: -15px;
+      font-size: 1.1rem;
+    }
+
+    .home .home-image {
+      position: relative;
+      left: -120px;
+      transform: scale(0.8);
+      bottom: -140px;
+    }  }
+
+
+  /* Responsive for section 2 */
+  @media screen and (max-width: 800px) {
+    .desiem-pag .desiem-paragraphe p {
+      width: 120%;
+      padding: 50px;
+      top: -25px;
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (max-width: 670px) {
+    .desiem-pag {
+      background-color: white;
+      display: block;
+      height: auto;
+    }
+
+    .desiem-pag .desiem-paragraphe p {
+      width: 96%;
+      padding: 10px 10px 0 0;
+      top: 20px;
+      margin-left: 35px;
+      font-size: 1.1rem;
+    }
+
+    .desiem-pag .desiem-image img {
+      position: relative;
+      left: 30px;
+      width: 230px;
+      height: 230px;
+      padding: 30px 0 0 0;
+    }
+
+    .desiem-image {
+      display: flex;
+      transform: scale(1.2);
+      justify-content: center;
+      width: 90%;
+    }
+  }
+  @media (max-width: 750px) {
+    .home .home-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      left: 0;
+      bottom: 0;
+      transform: scale(0.9);
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      margin-top: 30px;
+    }
+
+    .home .home-image img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      position: static;
+      margin: 0 auto;
+      display: block;
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 750px)  {  
+  .hh2 h2 { position: relative;
+      top: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-left: 0;
+      margin: 0 auto;
+      text-align: center;  
+    }
+
+  .home h2 {
+    position: absolute;
+    top: 65px;
+    left: 40%;
+    transform: translateX(-40%);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline solid rgba(76, 44, 2, 0.939);
+    text-underline-offset: 6px;
+    transition: 0.5s;  }}
+  .troisiempage {
+    width: 100%;
+    background: rgba(234, 187, 126, 0.759); 
+    padding: 100px 0 50px; /* بدل margin-top */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .text-skills{
+    margin-top: -50px;
+  }
+  .my-skill {
+    width: 210px;
+    height: 270px;
+    background-color: rgb(3, 49, 69); 
+    color: white;
+    text-align: center;
+    padding: 20px 0; 
+    border-radius: 15px;
+
+  }
+
+  .text-skills {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-underline-offset: 10px;
+  
+  }
+  .troisiempage{
+    margin-top: 150px;
+  }
+  .troisiempage h2{
+
+  }
+  .p-skills{
+        color: rgba(234, 183, 117, 0.9);
+      font-size: 5px;
+      text-transform: uppercase;
+
+  }
+  .my-skill p{
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  h3{
+    font-size: 19px;
+  }
+
+  /*  */
+  .my-project{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+      background-color: rgb(3, 49, 69); 
+
+
+  }
+  .my-project img{ 
+    width: 50px;
+    height: 50px;
+  }
+  .my-project button{
+    width: 250px;
+    padding: 20px;
+      margin-top: 70px;
+      margin-right: 35px;
+  flex-wrap: wrap;
+    border: rgba(234, 183, 117, 0.9) solid 3px;
+    outline: none;
+    font-size: 20px;
+      background-color: rgba(3, 43, 61, 0.808); 
+    border-radius: 8px;
+    cursor: pointer;
+        color: rgba(234, 183, 117, 0.9);
+  }
+  .project {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap ;
+  }
+  .the-project{
+  display: none;  
+  }
+  .my-project button:hover{
+    transform: scaleX(5.5);
+    color: rgb(49, 45, 31);
+  }
+  /* تنسيق القسم الرئيسي */
+  .my-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #000000d2;
+  }
+
+  /* العنوان في المنتصف */
+  .my-project h4 {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: rgba(234, 183, 117, 0.9);
+    margin-bottom: 30px;
+  }
+
+  /* تنسيق الأزرار */
+  .my-project button {
+    padding: 15px 20px;
+    margin: 10px auto;
+    border: rgba(234, 183, 117, 0.9) solid 3px;
+    font-size: 1rem;
+    background-color: rgba(3, 43, 61, 0.808);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgba(234, 183, 117, 0.9);
+    transition: 0.3s ease;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .my-project button:hover {
+    transform: scale(1.05);
+    color: white;
+    background-color: rgba(234, 183, 117, 0.9);
+    border-color: white;
+  }
+
+  /* حاوية المشاريع */
+  .the-project {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .the-project.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  /* صور المشاريع */
+  .the-project img {
+    width: 230px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid rgba(234, 183, 117, 0.9);
+    transition: transform 0.3s ease;
+    margin-left: 30px;
+  }
+
+  .the-project img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(234, 183, 117, 0.7);
+  }
+
+  /* Responsive تعديل للموبايل */
+  @media screen and (max-width: 600px) {
+    .my-project h4 {
+      font-size: 1.5rem;
+    }
+
+    .the-project img {
+      width: 90%;
+      height: auto;
+    }
+  }
+  .contact {
+    padding: 50px 20px;
+    background-color: #111;
+    color: white;
+    text-align: center;
+  }
+  html {
+      scroll-behavior: smooth;
+  }
+  #contact {
+
+
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+  padding: 10px 0;
+
+  }#contact a{ 
+    margin-left: -5px;
+  }
+  @media screen and (max-width:500px){
+    ul{
+      font-size: 3px;
+    }
+    .dashbar{
+      height: 250px;
+      background-color: red;
+    }
+    ul li  {
+          font-size: 10px;
+          padding: 0;
+
+    }
+    .home-image img{
+  transform: scale();   }
+  } 
+@media (max-width: 550px) {
+  .home {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 30px 10px;
+    text-align: center;
+  }
+ul{
+  margin: 5px;
+  position: absolute;
+  left: 80px;
+}
+  .home h2 {
+    font-size: 1.5rem;
+    margin-top: 250px;
+    position: relative;
+    transform: none;
+    top: 50px;
+    left: 0px;
+    text-decoration: underline;
+  }
+.home h1{
+  margin-left: -65px;
+}
+  .home p {
+    width: 100%;
+    font-size: 1rem;
+    top: 50px;
+    padding: 0;
+    margin: 15px 0;
+    line-height: 1.6;
+  }
+
+  .home .home-image {
+    position: static;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: none;
+  }
+
+  .home .home-image img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+
